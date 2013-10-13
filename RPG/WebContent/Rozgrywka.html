@@ -9,7 +9,7 @@
 
 
 <section style="width:60%; float:left;">
-	<div id="pTresc" >Przebieg rozgrywki
+	<div id="pTresc" style="overflow:auto">Przebieg rozgrywki
 	
 	<!-- fabuła -->
 	<p>
@@ -32,9 +32,33 @@
 	
 </section>
 
-<section  style="float:left; width:40%">
+<section  style="float:left; width:35%">
 
-	<div style="float:right">
+
+
+	<img src="media/map.jpg" width=100%  alt="Mapa krainy">
+	
+	
+	<table border="1" style="width:100%">
+		<tr>
+		<th rowspan="4">
+		<img src="media/skrzat.png" alt="obrazek postaci">
+		</th>
+		<th>Imie postaci</th>
+		</tr>
+		<tr>
+		<th>Rasa</th>
+		</tr>
+		<tr><th><strong>Umiejetności</strong>
+		<p id="opis_um">Opis um postaci</p>
+	</th></tr></table>
+	
+
+</section>
+
+<section style="float:right">
+	<details >
+	<summary></summary>
 		<!-- lista wszystkich postaci -->
 		<table>
 		<tr><th>Imie</th></tr>
@@ -56,29 +80,7 @@
 		<tr><th>Imie</th></tr>
 		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
 		</table>	
-	</div>
-
-	<img src="media/map.jpg" width=80%  alt="Mapa krainy">
-	
-	
-	<table border="1" >
-		<tr>
-		<th rowspan="4">
-		<img src="media/skrzat.png" alt="obrazek postaci">
-		</th>
-		<th>Imie postaci</th>
-		</tr>
-		<tr>
-		<th>Rasa</th>
-		</tr>
-		<tr><th><strong>Umiejetności</strong>
-		<p id="opis_um">Opis um postaci</p>
-	</th></tr></table>
-	
-
+	</details>
 </section>
-
-
-
 </body>
 </html>
