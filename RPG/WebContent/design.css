@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+body{
+	margin:0px;
+}
+
+#pTresc{
+	background-color:black;
+	color:white;
+	padding:10px;
+	height:450px;
+}
