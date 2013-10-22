@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+body{
+	margin:0px;
+ 	background-color:black; 
+ 	font-family:Calibri;
+}
+
+#pTresc{
+	background-color:black;
+	color:white;
+	padding:10px;
+	height:450px;
+}
+
+.content{
+	background-image: url('media/texture.jpg');
+	width:80%;
+	margin:auto;
+	padding:10px;
+	
+}
+
+div.hide{
+	display: none;
+}
+
+span.hide{
+	background-color:#CCCC66;
+}
+
+div.selected {
+	background-color:#CC9966;
+	padding:10px;
+	display:block;
+	border-radius:5px;
+	border-style:solid;
+	border-color:#CCCC66;
+	border-width:5px;
+
+	
+}
+
+span.selected{
+	border-style:solid;
+	background-color:#CC9966;
+	border-color:#CCCC66;
+	border-bottom-color:#CC9966;
+	border-width:4px;
+	border-bottom-width:0px;
+	font-weight:bold;
+
+}
+
+span{
+	padding:5px;
+	border-radius:5px;
+}
+
+span:hover{
+	cursor:pointer;
+}

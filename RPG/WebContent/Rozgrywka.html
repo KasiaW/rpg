@@ -3,13 +3,14 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <title>Rozgrywka</title>
- <link rel="stylesheet" href="design.css" />
+ <link rel="stylesheet" href="style.css" />
+ <script src="js/jquery-1.10.2.js"></script>
 </head>
-<body>
+<body style="background-color:white">
 
 
-<section style="width:60%; float:left;">
-	<div id="pTresc" style="overflow:auto">Przebieg rozgrywki
+<section style="width:60%; float:left;margin:5px;">
+	<div id="pTresc" style="overflow:auto; border-radius:5px;">Przebieg rozgrywki
 	
 	<!-- fabuła -->
 	<p>
@@ -32,55 +33,78 @@
 	
 </section>
 
-<section  style="float:left; width:35%">
+<section  style="float:left; width:35%; margin:10px">
+	<span class="selected" onClick="changeTab('#map')" id="map_s">Mapa</span>
+	<span class="hide" onClick="changeTab('#postacie')" id="postacie_s">Postacie</span>
+	<span class="hide" onClick="changeTab('#kosci')" id="kosci_s">Kości</span>
 
-
-
-	<img src="media/map.jpg" width=100%  alt="Mapa krainy">
+	<div id="map_d" class="selected" >
+		<img src="media/map.jpg" width=100%  alt="Mapa krainy">
+	</div>
+	<div id="postacie_d" class="hide">
 	
-	
-	<table border="1" style="width:100%">
-		<tr>
-		<th rowspan="4">
-		<img src="media/skrzat.png" alt="obrazek postaci">
-		</th>
-		<th>Imie postaci</th>
-		</tr>
-		<tr>
-		<th>Rasa</th>
-		</tr>
-		<tr><th><strong>Umiejetności</strong>
-		<p id="opis_um">Opis um postaci</p>
-	</th></tr></table>
-	
-
-</section>
-
-<section style="float:right">
-	<details >
-	<summary></summary>
-		<!-- lista wszystkich postaci -->
+	 	<strong>Bohaterowie</strong>
 		<table>
-		<tr><th>Imie</th></tr>
-		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
+		<tr>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		</tr>
+		</table>
+	 
+	 
+	 <p></p>
+	 	<strong>Inne postacie</strong>
+		<table>
+		<tr>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
+		</tr>
+		</table>
+	
+	 	
+	<p><strong>Dodaj nową postać</strong></p>
 		
-<!-- do skasowania -->		
-		<tr><th>Imie</th></tr>
-		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
-		<tr><th>Imie</th></tr>
-		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
-		<tr><th>Imie</th></tr>
-		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
-		<tr><th>Imie</th></tr>
-		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
-		<tr><th>Imie</th></tr>
-		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
-		<tr><th>Imie</th></tr>
-		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
-		<tr><th>Imie</th></tr>
-		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr>
-		</table>	
-	</details>
+	
+	 	
+	</div>
+	<div id="kosci_d" class="hide">
+		<strong>Wykonaj nowy rzut</strong>
+		
+		<form>
+		<input type="text" name="n" value="6">
+		<input type="submit" value="losuj">
+		</form>	
+	</div>
+	
+	
+	
+
+
 </section>
+
+
+<!-- 		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr> -->
+
+<script>
+
+	function changeTab(tab){
+		$(".selected").attr('class', 'hide');
+		$(tab+"_d").attr('class','selected');
+		$(tab+"_s").attr('class','selected');
+		
+		
+		
+		
+	}
+
+</script>
 </body>
 </html>
