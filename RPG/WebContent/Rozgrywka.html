@@ -3,7 +3,7 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <title>Rozgrywka</title>
- <link rel="stylesheet" href="style.css" />
+ <link rel="stylesheet" href="rozgrywka.css" />
  <script src="js/jquery-1.10.2.js"></script>
 </head>
 <body style="background-color:white">
@@ -40,37 +40,85 @@
 
 	<div id="map_d" class="selected" >
 		<img src="media/map.jpg" width=100%  alt="Mapa krainy">
+		
+	<!-- Dla MG -->
+		<p><strong>Przenieś postacie</strong></p>
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img1" onclick="changeImg('#img1')" >
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img2" onClick="changeImg('#img2')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img3" onClick="changeImg('#img3')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img4" onClick="changeImg('#img4')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img5" onClick="changeImg('#img5')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img6" onClick="changeImg('#img6')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img7" onClick="changeImg('#img7')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img8" onClick="changeImg('#img8')">
+	
+		
+		
+		
+		
 	</div>
 	<div id="postacie_d" class="hide">
 	
 	 	<strong>Bohaterowie</strong>
-		<table>
-		<tr>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		</tr>
-		</table>
+		<div class="char_set">
+	 	<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img11" onclick="selectChar('#img11')" >
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img12" onClick="selectChar('#img12')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img13" onClick="selectChar('#img13')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img14" onClick="selectChar('#img14')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img15" onClick="selectChar('#img15')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img16" onClick="selectChar('#img16')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img17" onClick="selectChar('#img17')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img18" onClick="selectChar('#img18')">
+
+	 	</div>
 	 
 	 
 	 <p></p>
 	 	<strong>Inne postacie</strong>
-		<table>
-		<tr>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		<td><img src="media/skrzat.png" alt="obrazek postaci" width="50"></td>
-		</tr>
-		</table>
-	
+	 	<div class="char_set">
+	 	<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img11" onclick="selectChar('#img11')" >
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img12" onClick="selectChar('#img12')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img13" onClick="selectChar('#img13')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img14" onClick="selectChar('#img14')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img15" onClick="selectChar('#img15')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img16" onClick="selectChar('#img16')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img17" onClick="selectChar('#img17')">
+		<img src="media/skrzat.png" alt="obrazek postaci" width="50" class="no_selected_img" id="img18" onClick="selectChar('#img18')">
 	 	
+	 	</div>
+	
+	
+	<p></p><strong>Imie</strong>
+	<table class="table_char">
+		<tr ><td ><img src="media/skrzat.png" alt="obrazek postaci" width="150" ></td>
+			<td rowspan="3">
+				<div style="overflow:auto; height:180px">			
+				Aenean pharetra metus urna, sed aliquet arcu dictum et. In posuere congue pellentesque. Aenean volutpat enim erat, vitae varius purus gravida at. Nullam et volutpat tellus. Maecenas fermentum in arcu id elementum. Pellentesque sed nibh ac enim imperdiet bibendum. Donec in lacus imperdiet, consequat elit nec, tristique nunc. Duis ultricies erat at sapien sagittis fermentum. Fusce porttitor mauris lacus, ut ullamcorper neque tincidunt at. Mauris porttitor nibh id venenatis adipiscing. Proin at justo quis magna dictum pulvinar ut et augue.
+				</div>
+			</td>
+		</tr>
+		<tr><td>Specjalizacja</td></tr>
+		<tr><td>Rasa</td></tr>
+		
+	</table>
+		
+		
+		
+		
+		
+	<!-- Dla MG --> 	
 	<p><strong>Dodaj nową postać</strong></p>
+	<form>
+		
+		<input type="text" name="dodaj_postac" placeholder="Wybierz postać z listy" list="nowa_postac" >
+		<datalist id= "nowa_postac">
+			<option value="Bohater1">
+			<option value="Bohater2">
+			<option value="Bohater3">
+			<option value="Bohater4">
+		</datalist>
+		<input type="submit" value="Dodaj">
+	</form>
 		
 	
 	 	
@@ -91,7 +139,6 @@
 </section>
 
 
-<!-- 		<tr><th><img src="media/skrzat.png" alt="obrazek postaci" width="50"></th></tr> -->
 
 <script>
 
@@ -99,11 +146,28 @@
 		$(".selected").attr('class', 'hide');
 		$(tab+"_d").attr('class','selected');
 		$(tab+"_s").attr('class','selected');
-		
-		
-		
-		
 	}
+	
+	function changeImg(tab){
+
+ 		if ($(tab).attr('class') == 'selected_img'){
+ 			$(tab).attr('class','no_selected_img');
+ 			
+ 		}
+ 		else{
+ 			$(tab).attr('class','selected_img');
+ 					
+ 		}		
+		
+	}	
+	
+	function selectChar(tab){
+		$(".selected_img").attr('class', 'no_selected_img');
+		$(tab).attr('class','selected_img');
+	}
+		
+		
+	
 
 </script>
 </body>
