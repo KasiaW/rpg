@@ -1,23 +1,75 @@
 @CHARSET "UTF-8";
 
-body{
-	margin:0px;
- 	background-color:black; 
- 	font-family:Calibri;
+body {
+	margin: 0px;
+	background-color: black;
+	font-family: Calibri;
 }
 
-#pTresc{
-	background-color:black;
-	color:white;
-	padding:10px;
-	height:450px;
+#menu {
+	background-image: url('media/texture2.jpg');
+	height: 30px;
 }
 
-.content{
-	background-image: url('media/texture.jpg');
-	width:80%;
-	margin:auto;
-	padding:10px;
-	
+#menu ul {
+	list-style: none;
+	margin-left: 10%;
 }
 
+#menu ul li {
+	display: inline;
+	padding: 5px;
+}
+
+#pTresc {
+	background-color: black;
+	color: white;
+	padding: 10px;
+	height: 450px;
+}
+
+.content {
+	background-image: url('media/texture2.jpg');
+	width: 80%;
+	margin: auto;
+	padding: 10px;
+	min-height: 600px;
+}
+
+#MG_menu {
+	float: right;
+}
+
+#MG_menu span:hover {
+	cursor: pointer;
+	font-weight: bold;
+}
+
+#MG_form .selected {
+	display: block;
+}
+
+#MG_form .hide {
+	display: none;
+}
+
+.ogloszenie {
+	background-color: #D6C485;
+	box-shadow: 10px 10px 20px dimgrey;
+	padding: 10px;
+	border-radius: 3px;
+	margin: 10px;
+}
+
+.b_close {
+	background-image: url('media/b_close.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 30px;
+	height: 20px;
+	float: right;
+}
+
+.b_close:hover {
+	cursor: pointer;
+}
