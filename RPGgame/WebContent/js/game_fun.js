@@ -4,9 +4,4 @@ function changeTab(tab){
 		$(tab+"_d").attr('class','selected');
 		$(tab+"_s").attr('class','selected');
 	}
-
-function addHeader(){
-	$('#Header').load('header.html');
-	alert("juz");
-}
 	
