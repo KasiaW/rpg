@@ -7,7 +7,7 @@
 <script src="js/game_fun.js"></script>
 <title>Zarządzanie grą</title>
 </head>
-<body >
+<body>
 
 	<header id="Header">kk</header>
 
@@ -56,8 +56,7 @@
 						</th>
 					</tr>
 					<tr>
-						<th><br>
-						<input type="submit" value="zapisz"></th>
+						<th><br> <input type="submit" value="zapisz"></th>
 					</tr>
 				</table>
 
@@ -66,18 +65,26 @@
 			<!-- MAPA -->
 			<div class="selected" id="map_d">
 				<h2>Mapa</h2>
+
+
+				<div style="float: left">
+					<button id="b_brush">Pedzel</button>
+					<button id="b_tree">drzewo</button>
+					<button id="b_stones">żwir</button>
+					<button id="b_stone">kamień</button>
+					<button id="b_water">woda</button>
+					<button id="b_grass">trawa</button>
+				</div>
 			
+				<div style="float: left">
+					<map name="hej"></map>
+					
+				</div>
 			
-			<div style="float:left">								
-				<button id="b_brush">Pedzel</button>	
-				<button id="b_tree">drzewo</button>	
-				<button id="b_stones">żwir</button>
-				<button id="b_stone">kamień</button>
-				<button id="b_water">woda</button>		
-				<button id="b_grass">trawa</button>		
+			<canvas id="mapCanvas" width="800" height="400"
+				style="border: 1px solid black"></canvas>
 			</div>
-			</div>
-			<canvas id ="mapCanvas" width="800" height="400" style="border:1px solid black"></canvas>
+			
 
 			<!-- POSTACIE -->
 			<div class="hide" id=postacie_d>
@@ -147,12 +154,14 @@
 
 
 	</section>
-<script>
+	<script>
 $("document").ready(addHeader());
 	
 		
 	var canvas = document.getElementById("mapCanvas");
 	var context = canvas.getContext("2d");
+	
+	
 
 	var width = 800;
 	var height = 400;
@@ -162,10 +171,16 @@ $("document").ready(addHeader());
 	var y0;
 	var image = new Image();
 	
-
-	var img;
 	
-	var button = document.getElementById("b_tree");
+
+	var img;	//nazwa obrazka (bez scieżki)
+	var centerX; //polowa szerokosci obrazka
+	var centerY; //polowa wysokosci obrazka
+	
+	context.fillStyle = "#FFE699";
+	context.fillRect(0,0,width, height);
+	
+	$("#b_brush").bind("click", startPaint);
 	$("#b_tree").bind("click", function(){
 		startPaintObj("drzewo.png");
 	});
@@ -173,10 +188,10 @@ $("document").ready(addHeader());
 		startPaintObj("stone.png");
 	});
 	$("#b_stones").bind("click", function(){
-		startPaintObj("stones.png");
+		startPaintObj("stones2.png");
 	});
 	$("#b_water").bind("click", function(){
-		startPaintObj("water.png");
+		startPaintObj("water2.png");
 	});
 	$("#b_grass").bind("click", function(){
 		startPaintObj("grass.png");
@@ -186,25 +201,53 @@ $("document").ready(addHeader());
 
 	function startPaintObj(img){
 		canvas.addEventListener("click", drawObj,  false);
+		image.src = "media/map_obj/"+img;
 		position = $('#mapCanvas').offset();
 		x0 = position.left;
 		y0 = position.top;
-		image.src = "media/map_obj/"+img;
-	
+
 	}
 		
 	function drawObj(event){
-	
-		var x = event.x;
-		var y = event.y;
-		context.drawImage(image,x-x0-25,y-y0-25, 50, 50);		
-	}
-	
-	function startPaint(){
+		
+		centerX = (image.width)/2;
+		centerY = (image.height)/2;
+		var x = event.clientX;
+		var y = event.clientY;
+		context.drawImage(image,x-x0-centerX,y-y0-centerY);
 		
 	}
 	
-	function paint(event){
+
+	
+//malowanie pędzlem
+	function startPaint(){
+	canvas.removeEventListener("click", drawObj,  false);
+	canvas.addEventListener("mousedown", startPoly,  false);
+	canvas.addEventListener("mouseup", endPoly,  false);
+		position = $('#mapCanvas').offset();
+		x0 = position.left;
+		y0 = position.top;			
+	}
+	
+	
+	function startPoly(){		
+		context.beginPath();
+		canvas.addEventListener("mousemove", paintPoly,  false);
+		event.preventDefault();  //wyłączenie text-cursor w chromie 
+		
+	}
+	
+	
+	function endPoly(){
+		canvas.removeEventListener("mousemove", paintPoly, false);
+	}
+	
+	function paintPoly(event){
+		$(this).css('cursor', 'pointer');
+		context.lineTo(event.clientX-x0, event.clientY-y0);
+		context.stroke();
+		
 		
 	}
 	

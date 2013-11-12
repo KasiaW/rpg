@@ -9,7 +9,6 @@ body {
 #menu {
 	background-image: url('media/texture2.jpg');
 	height: 30px;
-	
 }
 
 #menu ul {
@@ -32,6 +31,7 @@ body {
 .content {
 	background-image: url('media/texture2.jpg');
 	width: 80%;
+	min-width:800px;
 	margin: auto;
 	margin-top: 30px;
 	padding: 10px;
@@ -73,5 +73,9 @@ body {
 }
 
 .b_close:hover {
+	cursor: pointer;
+}
+
+#mapCanvas:focus {
 	cursor: pointer;
 }
