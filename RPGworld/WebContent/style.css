@@ -8,18 +8,46 @@ body {
 
 #menu {
 	background-image: url('media/texture2.jpg');
-	height: 30px;
+	padding-left:9%;
+	padding-right:9%;
+	padding-top:5px;
+	padding-bottom:5px;
+	height:25px;
 }
 
-#menu ul {
+.left_menu{
+	float:left;
+}
+
+.right_menu {
+	float:right
+}
+
+nav{
+	padding:5px;
+
+}
+
+nav ul {
 	list-style: none;
-	margin-left: 10%;
+	display:none;
+	background-color:yellowgreen;
+	margin:0px;
+	padding:0px;
 }
 
-#menu ul li {
-	display: inline;
-	padding: 5px;
+nav ul li{
+	border-bottom: 1px ridge grey;
+	padding:5px;
 }
+
+nav:hover ul {
+	display:block;
+}
+
+
+
+
 
 #pTresc {
 	background-color: black;
